@@ -17,6 +17,7 @@ namespace TheContext
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Supervision>();
+            modelBuilder.Entity<User>();
             base.OnModelCreating(modelBuilder);
         }
     }
