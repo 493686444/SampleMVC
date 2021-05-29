@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PublishModel.cs" />
+    <Compile Include="Article\List.cs" />
+    <Compile Include="Article\Publish.cs" />
+    <Compile Include="Log\OffModel.cs" />
+    <Compile Include="Log\OnModel.cs" />
+    <Compile Include="Supervision\PublishModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,5 +54,6 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

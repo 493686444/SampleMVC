@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SRV.ViewModels
+namespace SRV.ViewModels.Supervision
 {
     public class PublishModel
     {
