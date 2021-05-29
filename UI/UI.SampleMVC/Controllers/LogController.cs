@@ -1,5 +1,4 @@
-﻿using SRV.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,15 +13,8 @@ namespace UI.SampleMVC.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult On(OnModel model)
-        {
-            return View();
-        }
-        public ActionResult Off()
-        {
-            return View();
-        }
+
+
 
     }
 }
