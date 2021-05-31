@@ -46,6 +46,7 @@
     <Compile Include="Article\Publish.cs" />
     <Compile Include="Log\OffModel.cs" />
     <Compile Include="Log\OnModel.cs" />
+    <Compile Include="RegisterModel.cs" />
     <Compile Include="Supervision\PublishModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

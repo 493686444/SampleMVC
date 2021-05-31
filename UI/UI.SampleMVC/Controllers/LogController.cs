@@ -25,6 +25,7 @@ namespace UI.SampleMVC.Controllers
             }
             OnService onService = new OnService();
             ViewData["result"]=onService.Servicing(model);
+            
             return View();
         }
 
