@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SRV.ProdServices.Log
 {
-    class OffService
+    public class OffService
     {
     }
 }

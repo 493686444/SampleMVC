@@ -14,9 +14,12 @@ namespace BLL.Repositories
         {
             Database.Log = Console.WriteLine;
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Supervision>();
+
+            
+            //modelBuilder.Entity<Supervision>();
             modelBuilder.Entity<User>();
             base.OnModelCreating(modelBuilder);
         }

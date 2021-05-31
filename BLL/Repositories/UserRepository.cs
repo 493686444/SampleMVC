@@ -9,10 +9,17 @@ namespace BLL.Repositories
 {
     public class UserRepository
     {
-        public SqlDbContext context { get; set; }
-        public User GetUser(int ID) 
+        public SqlDbContext context { get; set; } = new SqlDbContext();
+        public User GetUserByID(int ID) 
         {
             User user=context.Set<User>().Find(ID);
+            return user;
+        }
+        public User GetUserByName(string name)
+        {
+            User user = context.Set<User>()
+                               .Where(u => u.Name == name)
+                               .SingleOrDefault();
             return user;
         }
         public int SaveUser(User user)
