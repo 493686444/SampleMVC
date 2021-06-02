@@ -10,6 +10,7 @@ namespace UI.SampleMVC
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new ModelErrorTransferFilter());
+            filters.Add(new ContextPerRequest());
 
         }
     }

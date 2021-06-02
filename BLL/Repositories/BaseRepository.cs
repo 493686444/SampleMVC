@@ -20,6 +20,7 @@ namespace BLL.Repositories
             {
                 context = new SqlDbContext();
                 HttpContext.Current.Items["context"] = context;
+                context.Database.BeginTransaction();
             }
         }
     }

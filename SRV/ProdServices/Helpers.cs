@@ -35,5 +35,9 @@ namespace SRV.ProdServices
             }
 
         }
+        public static void EndTransaction() 
+        {
+            BLL.Repositories.Helpers.EndTransaction();
+        }
     }
 }

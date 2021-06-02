@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="Migrations\202105310739594_create.cs" />
     <Compile Include="Migrations\202105310739594_create.designer.cs">
       <DependentUpon>202105310739594_create.cs</DependentUpon>
