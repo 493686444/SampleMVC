@@ -19,9 +19,10 @@ namespace BLL.Repositories
             else
             {
                 context = new SqlDbContext();
-                HttpContext.Current.Items["context"] = context;
                 context.Database.BeginTransaction();
+                HttpContext.Current.Items["context"] = context;
             }
         }
     }
+
 }
