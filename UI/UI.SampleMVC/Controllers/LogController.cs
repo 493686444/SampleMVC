@@ -26,9 +26,9 @@ namespace UI.SampleMVC.Controllers
             }
             OnService onService = new OnService();
         
-            bool rememberable = onService.Servicing(model,out string result);
+            int? userID = onService.Servicing(model,out string result);
             ViewData["result"] = result;
-            if (model.RememberMe&& rememberable)
+            if (model.RememberMe&& userID!=null)
             {
                 HttpCookie cookie = new HttpCookie("User");
                 cookie.Values.Add("Name",model.Name);

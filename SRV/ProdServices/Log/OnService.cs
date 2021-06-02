@@ -12,14 +12,14 @@ namespace SRV.ProdServices.Log
 {
     public class OnService
     {
-        public bool Servicing(OnModel model,out string result)
+        public int? Servicing(OnModel model,out string result)
         {
             UserRepository repository = new UserRepository();
             User user = repository.GetUserByName(model.Name);
             if (user == null)
             {
                 result = "该用户不存在";
-                return false;
+                return null;
             }
             else
             {
@@ -27,13 +27,13 @@ namespace SRV.ProdServices.Log
                 if (LogOnable)
                 {
                     result = "登录成功";
-                    return true;
+                    return user.ID;
                    
                 }
                 else
                 {
                     result = "密码错误";
-                    return false;
+                    return null;
                 }
             }
            
