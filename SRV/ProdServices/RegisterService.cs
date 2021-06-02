@@ -1,5 +1,6 @@
 ﻿using BLL.Entities;
 using BLL.Repositories;
+using Global;
 using SRV.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace SRV.ProdServices
                 {
                     User newuser = new User();
                     newuser.Name = model.Name;
-                    newuser.Password = model.Password;
+                    newuser.Password = model.Password.MD5Encrypt();   //加密
                     repository.SaveUser(newuser);
                     return "注册成功";
                 }

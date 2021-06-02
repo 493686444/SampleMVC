@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace BLL.Repositories
 {
-    public class UserRepository
+    public class UserRepository:BaseRepository
     {
-        public SqlDbContext context { get; set; } = new SqlDbContext();
         public User GetUserByID(int ID) 
         {
             User user=context.Set<User>().Find(ID);

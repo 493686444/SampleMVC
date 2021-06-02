@@ -19,7 +19,7 @@ namespace BLL.Entities
         public bool Gender { set; get; } = true;//此处设置默认值,是测试的需要
 
 
-        public bool LogOn(string password)
+        public bool PasswordTest(string password)
         {
             if (password == Password)
             {

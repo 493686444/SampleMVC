@@ -59,24 +59,27 @@
 
                     <li class="nav-item dropdown">
 
-                        @{ //这个地方是个典型的使用范例
-                            if (string.IsNullOrEmpty(Context.Request.Cookies.Get("User.Name")?.Value))
-                            {
-                                <a asp-page="/User/LogIn" asp-route-parameter="@ViewData["parameter"]" class="nav-link dropdown-toggle">
-                                    <span class="fa fa-user-secret"></span>
-                                    登录
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">登录</a>
-                                    <a class="dropdown-item" href="#">注册</a>
-                                    <a class="dropdown-item" href="#">忘记密码</a>
-                                </div>
-                            }
-                            else
-                            {
-                                <span>欢迎：@(Context.Request.Cookies.Get("User.Name")?.Value)</span>
-                                <a asp-page="/User/LogOff" class="nav-link dropdown-toggle">登出</a>
-                            }
+
+                        @{ @*//这一功能应该用子action来做*@
+                        if (string.IsNullOrEmpty(Context.Request.Cookies.Get("User")?.Values["Name"].ToString()) &&
+                            string.IsNullOrEmpty(Context.Request.Cookies.Get("User")?.Values["Password"].ToString())
+                           )
+                        {
+                            <a asp-page="/User/LogIn" asp-route-parameter="@ViewData["parameter"]" class="nav-link dropdown-toggle">
+                                <span class="fa fa-user-secret"></span>
+                                登录
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">登录</a>
+                                <a class="dropdown-item" href="#">注册</a>
+                                <a class="dropdown-item" href="#">忘记密码</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <span>欢迎：@(Context.Request.Cookies.Get("User")?.Values[0].ToString())</span>
+                            <a asp-page="/User/LogOff" class="nav-link dropdown-toggle">登出</a>
+                        }
                         }
 
                     </li>

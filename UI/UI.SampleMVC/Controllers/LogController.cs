@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Global;
 
 namespace UI.SampleMVC.Controllers
 {
@@ -24,8 +25,16 @@ namespace UI.SampleMVC.Controllers
                 return View(model);
             }
             OnService onService = new OnService();
-            ViewData["result"]=onService.Servicing(model);
-            
+        
+            bool rememberable = onService.Servicing(model,out string result);
+            ViewData["result"] = result;
+            if (model.RememberMe&& rememberable)
+            {
+                HttpCookie cookie = new HttpCookie("User");
+                cookie.Values.Add("Name",model.Name);
+                cookie.Values.Add("Password",model.Password.MD5Encrypt());
+                Response.Cookies.Add(cookie);
+            }/*else nothing*/
             return View();
         }
 

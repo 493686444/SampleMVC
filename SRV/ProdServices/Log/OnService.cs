@@ -1,5 +1,6 @@
 ﻿using BLL.Entities;
 using BLL.Repositories;
+using Global;
 using SRV.ViewModels.Log;
 using System;
 using System.Collections.Generic;
@@ -11,28 +12,32 @@ namespace SRV.ProdServices.Log
 {
     public class OnService
     {
-        public string Servicing(OnModel model)
+        public bool Servicing(OnModel model,out string result)
         {
             UserRepository repository = new UserRepository();
             User user = repository.GetUserByName(model.Name);
             if (user == null)
             {
-                return "该用户不存在";
+                result = "该用户不存在";
+                return false;
             }
             else
             {
-                bool result = user.LogOn(model.Password);
-                if (result)
+                bool LogOnable = user.PasswordTest(model.Password.MD5Encrypt());
+                if (LogOnable)
                 {
-                    return "登录成功";
+                    result = "登录成功";
+                    return true;
+                   
                 }
                 else
                 {
-                    return "密码错误";
+                    result = "密码错误";
+                    return false;
                 }
-
             }
-
+           
+          
 
 
         }

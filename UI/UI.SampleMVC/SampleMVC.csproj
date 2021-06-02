@@ -134,6 +134,7 @@
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SupervisionController.cs" />
+    <Compile Include="Filters\ModelErrorTransferFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,6 +220,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Global\Global\Global.csproj">
+      <Project>{24daffd7-d213-405c-8277-175effe27cac}</Project>
+      <Name>Global</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SRV\ProdServices\ProdServices.csproj">
       <Project>{12dc35d1-6ed8-4223-8e06-0f8b5db850ca}</Project>
       <Name>ProdServices</Name>

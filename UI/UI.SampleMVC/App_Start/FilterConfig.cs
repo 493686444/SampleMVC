@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using UI.SampleMVC.Filters;
 
 namespace UI.SampleMVC
 {
@@ -8,6 +9,8 @@ namespace UI.SampleMVC
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new ModelErrorTransferFilter());
+
         }
     }
 }
