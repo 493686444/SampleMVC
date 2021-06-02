@@ -60,7 +60,7 @@
                     <li class="nav-item dropdown">
 
 
-                        @{ @*//这一功能应该用子action来做*@
+                        @{      @*这个地方可以被伪造,不过从宏观的角度来说没影响*@
                         if (string.IsNullOrEmpty(Context.Request.Cookies.Get("User")?.Values["Name"].ToString()) &&
                             string.IsNullOrEmpty(Context.Request.Cookies.Get("User")?.Values["Password"].ToString())
                            )

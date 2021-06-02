@@ -20,21 +20,21 @@ namespace UI.SampleMVC.Controllers
         [HttpPost]
         public ActionResult On(OnModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
             OnService onService = new OnService();
-        
             int? userID = onService.Servicing(model,out string result);
             ViewData["result"] = result;
-            if (model.RememberMe&& userID!=null)
+
+            if(userID==null)return View();
+            
+            HttpCookie cookie = new HttpCookie("User");
+            cookie.Values.Add("Name", model.Name);
+            cookie.Values.Add("Password", model.Password.MD5Encrypt());
+            if (model.RememberMe)
             {
-                HttpCookie cookie = new HttpCookie("User");
-                cookie.Values.Add("Name",model.Name);
-                cookie.Values.Add("Password",model.Password.MD5Encrypt());
-                Response.Cookies.Add(cookie);
-            }/*else nothing*/
+                cookie.Expires = DateTime.Now.AddDays(7);
+            }
+            Response.Cookies.Add(cookie);
+
             return View();
         }
 
