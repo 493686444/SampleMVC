@@ -13,7 +13,7 @@ namespace SRV.ProdServices
     {
         public static int? GetUserID()
         {
-            var userInfo = HttpContext.Current.Request.Cookies["User"].Values;
+            var userInfo = HttpContext.Current.Request.Cookies["User"].Values;  //这个地方耦合度高,可以放到UI层然后通过调用对象的方式降低耦合度
             if (userInfo==null)
             {
                 return null;
@@ -35,10 +35,12 @@ namespace SRV.ProdServices
             }
 
         }
+        
         public static void EndTransaction() 
         {
             BLL.Repositories.Helpers.EndTransaction();
         } 
+       
         public static void RollBack() 
         {
             BLL.Repositories.Helpers.RollBack();
