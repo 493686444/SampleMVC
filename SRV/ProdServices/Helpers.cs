@@ -38,6 +38,11 @@ namespace SRV.ProdServices
         public static void EndTransaction() 
         {
             BLL.Repositories.Helpers.EndTransaction();
+        } 
+        public static void RollBack() 
+        {
+            BLL.Repositories.Helpers.RollBack();
         }
+        
     }
 }

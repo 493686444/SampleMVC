@@ -17,7 +17,11 @@ namespace BLL.Repositories
             {
                 try
                 {
-                    transaction.Commit();
+                    transaction.Commit();   //其实这里报了异常,并准队数据库操作的话  会自动回滚的
+
+                    HttpContext.Current.Items.Remove("context");
+                    //防止被子Action错用   但是这样就变一次action一个连接数据库了
+
                 }
                 catch (Exception)
                 {
@@ -25,7 +29,15 @@ namespace BLL.Repositories
                     throw new Exception("事务提交异常call");
                 }
             }
-
         }
+        public static void RollBack()
+        {
+            SqlDbContext context = HttpContext.Current.Items["context"] as SqlDbContext;
+            using (DbContextTransaction transaction = context.Database.CurrentTransaction)
+            {
+                transaction.Rollback();
+            }
+        }
+
     }
 }
