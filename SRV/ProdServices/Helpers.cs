@@ -11,23 +11,15 @@ namespace SRV.ProdServices
 {
     public static class Helpers
     {
-        public static int? GetUserID()
+        public static int GetUserID(int id,string userInfoPassword)
         {
-            var userInfo = HttpContext.Current.Request.Cookies["User"].Values;  //这个地方耦合度高,可以放到UI层然后通过调用对象的方式降低耦合度
-            if (userInfo==null)
-            {
-                return null;
-            }
-
-            int userInfoID = Convert.ToInt32(userInfo["ID"]);
-
+          
             UserRepository userRepository = new UserRepository();
-            User user=userRepository.GetUserByID(userInfoID);
-            bool result = user.PasswordTest(userInfo["Password"]);
-
+            User user=userRepository.GetUserByID(id);
+            bool result = user.PasswordTest(userInfoPassword);
             if (result)
             {
-                return userInfoID;
+                return id;
             }
             else
             {
