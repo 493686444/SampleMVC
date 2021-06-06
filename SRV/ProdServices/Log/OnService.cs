@@ -15,7 +15,7 @@ namespace SRV.ProdServices.Log
         public int? Servicing(OnModel model,out string result)
         {
             UserRepository repository = new UserRepository();
-            User user = repository.GetUserByName(model.Name);
+            BLL.Entities.User user = repository.GetUserByName(model.Name);
             if (user == null)
             {
                 result = "该用户不存在";

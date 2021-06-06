@@ -13,6 +13,7 @@
 
 @using (Html.BeginForm(FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div style="padding: 0 10px 0 10px;  margin-bottom: 10px;  background-color: #ffffe0" class="yellow-highlight">
 
         <div class="text-right" style="padding-top:10px;">

@@ -8,7 +8,7 @@ namespace BLL.Entities
 {
     public class Supervision
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Explain { get; set; }
         //public List<string> Lables { get; set; }   //需要js,暂时搁置

@@ -11,9 +11,10 @@
 }
 @using (Html.BeginForm(FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     @*<div>
-        <h3> @ViewData["tooltip"]</h3>
-    </div>*@
+            <h3> @ViewData["tooltip"]</h3>
+        </div>*@
     <label>用户名：（* 必填）</label>
     @Html.ValidationMessageFor(m => m.Name)
     @Html.TextBoxFor(m => m.Name, new { placeholder = "不是昵称，是登录用户名", @class = "form-control" })

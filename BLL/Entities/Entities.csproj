@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Article.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="User.cs" />
     <Compile Include="WeekDay.cs" />
     <Compile Include="Supervision.cs" />

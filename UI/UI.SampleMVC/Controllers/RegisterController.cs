@@ -15,7 +15,8 @@ namespace UI.SampleMVC.Controllers
         {
             return View();
         }
-     [HttpPost]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
         public ActionResult Index(RegisterModel model)
         {
             if (!ModelState.IsValid)

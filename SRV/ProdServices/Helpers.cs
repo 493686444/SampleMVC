@@ -1,5 +1,4 @@
-﻿using BLL.Entities;
-using BLL.Repositories;
+﻿using BLL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +12,8 @@ namespace SRV.ProdServices
     {
         public static int GetUserID(int id,string userInfoPassword)
         {
-          
             UserRepository userRepository = new UserRepository();
-            User user=userRepository.GetUserByID(id);
+            BLL.Entities.User user =userRepository.GetUserById(id);
             bool result = user.PasswordTest(userInfoPassword);
             if (result)
             {
@@ -25,7 +23,6 @@ namespace SRV.ProdServices
             {
                 throw new ArgumentException("存储密码异常");
             }
-
         }
         
         public static void EndTransaction() 

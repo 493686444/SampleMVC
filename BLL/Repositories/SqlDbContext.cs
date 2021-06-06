@@ -17,9 +17,7 @@ namespace BLL.Repositories
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
-            
-            //modelBuilder.Entity<Supervision>();
+            modelBuilder.Entity<Article>();
             modelBuilder.Entity<User>();
             base.OnModelCreating(modelBuilder);
         }

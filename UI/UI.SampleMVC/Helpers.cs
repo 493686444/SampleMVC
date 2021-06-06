@@ -18,7 +18,7 @@ namespace UI.SampleMVC
             int userInfoID = Convert.ToInt32(userInfo["ID"]);
             string userInfoPassword = (userInfo["Password"]).ToString();
 
-            int ID = SRV.ProdServices.Helpers.GetUserID(userInfoID, userInfoPassword);
+            int ID = SRV.ProdServices.Helpers.GetUserId(userInfoID, userInfoPassword);
             return ID;
 
         }

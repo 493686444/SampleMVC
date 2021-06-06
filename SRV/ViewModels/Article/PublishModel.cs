@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SRV.ViewModels.Article
 {
-    public class List
+    public class PublishModel
     {
     }
 }

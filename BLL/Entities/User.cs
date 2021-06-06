@@ -9,7 +9,7 @@ namespace BLL.Entities
 {
     public class User
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "用户名不可空")]
         public string Name { get; set; }
@@ -17,8 +17,10 @@ namespace BLL.Entities
         [Required(ErrorMessage = "请输入密码")]
         public string Password { get; set; }
         public bool? Gender { set; get; } 
-        public int? QQ { set; get; }
+        public int? Yesr { set; get; }
+        public Email Email { set; get; }
 
+        
         public bool PasswordTest(string password)
         {
             if (password == Password)

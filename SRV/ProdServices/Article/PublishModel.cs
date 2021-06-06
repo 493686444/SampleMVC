@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SRV.ViewModels.Article
+namespace SRV.ProdServices.Article
 {
-    public class Publish
+    class PublishModel
     {
     }
 }

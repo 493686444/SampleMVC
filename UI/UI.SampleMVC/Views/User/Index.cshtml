@@ -1,0 +1,64 @@
+﻿@model SRV.ViewModels.User.IndexModel
+@{
+    Layout = "~/Views/Shared/_User.cshtml";
+}
+@section title {
+    <span class="fa fa-sign-in " aria-hidden="true"></span>
+    个人资料
+}
+@section upTitle {
+    个人资料
+}
+
+@{
+    int[] years = new int[40];
+    for (int i = 0; i < years.Length; i++)
+    {
+        years[i] = 1980 + i;
+    }
+}
+
+@using (Html.BeginForm(FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+    <p>头像：（* 仅限jpg/png/gif）</p>
+    <input type="file" accept="image/*" name="icon" />
+
+    <label>性别：</label>
+    <label>
+        @Html.RadioButtonFor(m => m.Gender, true)
+        男
+    </label>
+    <label>
+        @Html.RadioButtonFor(m => m.Gender, false)
+        女
+    </label>
+
+    <label>生日：</label>
+    <br />
+    @Html.DropDownListFor(m => m.Yesr, new SelectList(years), "---")
+    <span>年</span>
+
+    @Html.TextBoxFor(m => m.Email)
+    if (Model.Email.Activated)
+    {
+        <span>已激活</span>
+    }
+    else
+    {
+        <a href="">请激活</a>
+    }
+    <input type="submit" value="保存" />
+}
+
+
+
+
+@section aside {
+    <h3 style="color: #31708f;"><span class="fa fa-question-circle "></span>说明</h3>
+    <ol>
+        <li>头像仅接受jpg/png/gif格式，大小不超过256KB</li>
+        <li>头像图片的建议宽度为300像素左右，过宽或过窄都有可能失真。</li>
+        <li>自我介绍的字数不要超过255字。</li>
+    </ol>
+}

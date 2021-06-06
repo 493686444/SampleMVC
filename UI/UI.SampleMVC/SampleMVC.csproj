@@ -134,6 +134,7 @@
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SupervisionController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Filters\ContextPerRequest.cs" />
     <Compile Include="Filters\ModelErrorTransferFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -204,6 +205,8 @@
     <Content Include="Views\Article\List.cshtml" />
     <Content Include="Views\Shared\_User.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\User\RetrievePassword.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

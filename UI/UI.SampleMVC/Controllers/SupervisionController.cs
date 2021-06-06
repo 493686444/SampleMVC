@@ -16,12 +16,11 @@ namespace UI.SampleMVC.Controllers
 
             return View();
         }
+        //[ValidateAntiForgeryToken]
         //[HttpPost]
         //public ActionResult Publish(PublishModel model)
         //{
-        //    context = new SqlDbContext();
-        //    context.Supervisions.Add(model.Supervision);
-        //    context.SaveChanges();
+      
         //    return View();
         //}
     }

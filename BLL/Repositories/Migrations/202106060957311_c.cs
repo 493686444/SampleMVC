@@ -11,13 +11,13 @@
                 "dbo.Users",
                 c => new
                     {
-                        ID = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false),
                         Password = c.String(nullable: false),
                         Gender = c.Boolean(),
                         QQ = c.Int(),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.Id);
             
         }
         

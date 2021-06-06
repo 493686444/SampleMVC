@@ -9,9 +9,9 @@ namespace BLL.Repositories
 {
     public class UserRepository:BaseRepository
     {
-        public User GetUserByID(int ID) 
+        public User GetUserById(int Id) 
         {
-            User user=context.Set<User>().Find(ID);
+            User user=context.Set<User>().Find(Id);
             return user;
         }
         public User GetUserByName(string name)
@@ -25,7 +25,7 @@ namespace BLL.Repositories
         {
             context.Set<User>().Add(user);
             context.SaveChanges();
-            return user.ID;
+            return user.Id;
         }
     }
 }

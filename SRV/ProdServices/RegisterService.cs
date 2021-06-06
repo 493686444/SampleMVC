@@ -1,5 +1,4 @@
-﻿using BLL.Entities;
-using BLL.Repositories;
+﻿using BLL.Repositories;
 using Global;
 using SRV.ViewModels;
 using System;
@@ -15,7 +14,7 @@ namespace SRV.ProdServices
         public string Servicing(RegisterModel model)
         {
             UserRepository repository = new UserRepository();
-            User user = repository.GetUserByName(model.Name);
+            BLL.Entities.User user = repository.GetUserByName(model.Name);
             if (user!=null)
             {
                 return "用户名已存在";
@@ -24,7 +23,7 @@ namespace SRV.ProdServices
             {
                 if (model.Password==model.PasswordSecond)
                 {
-                    User newuser = new User();
+                    BLL.Entities.User newuser = new BLL.Entities.User();
                     newuser.Name = model.Name;
                     newuser.Password = model.Password.MD5Encrypt();   //加密
                     repository.SaveUser(newuser);
