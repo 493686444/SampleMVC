@@ -11,21 +11,21 @@ namespace UI.SampleMVC.Controllers
 {
     public class LogController : Controller
     {
-      //On
+        //On
         public ActionResult On()
         {
-            
+
             return View();
         }
         [HttpPost]
         public ActionResult On(OnModel model)
         {
             OnService onService = new OnService();
-            int? userID = onService.Servicing(model,out string result);
+            int? userID = onService.Servicing(model, out string result);
             ViewData["result"] = result;
 
-            if(userID==null)return View();
-            
+            if (userID == null) return View();
+
             HttpCookie cookie = new HttpCookie("User");
             cookie.Values.Add("Name", model.Name);
             cookie.Values.Add("Password", model.Password.MD5Encrypt());
@@ -41,8 +41,8 @@ namespace UI.SampleMVC.Controllers
         //Off
         public ActionResult Off()
         {
-
-            return View();
+            Response.Cookies["User"].Expires = DateTime.Now.AddDays(-1);
+            return RedirectToAction("On", "Log");
         }
         [HttpPost]
         public ActionResult Off(OnModel model)

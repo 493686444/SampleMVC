@@ -16,8 +16,8 @@ namespace BLL.Entities
 
         [Required(ErrorMessage = "请输入密码")]
         public string Password { get; set; }
-        public bool Gender { set; get; } = true;//此处设置默认值,是测试的需要
-
+        public bool? Gender { set; get; } 
+        public int? QQ { set; get; }
 
         public bool PasswordTest(string password)
         {

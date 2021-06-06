@@ -60,7 +60,7 @@
                     <li class="nav-item dropdown">
 
 
-                        @{      @*这个地方可以被伪造,不过从宏观的角度来说没影响*@
+                        @{    
                         if (string.IsNullOrEmpty(Context.Request.Cookies.Get("User")?.Values["Name"].ToString()) &&
                             string.IsNullOrEmpty(Context.Request.Cookies.Get("User")?.Values["Password"].ToString())
                            )
@@ -77,8 +77,8 @@
                         }
                         else
                         {
-                            <span>欢迎：@(Context.Request.Cookies.Get("User")?.Values[0].ToString())</span>
-                            <a asp-page="/User/LogOff" class="nav-link dropdown-toggle">登出</a>
+                            <span>欢迎：@(Context.Request.Cookies.Get("User")?.Values["Name"].ToString())</span>
+                            <a href="/Log/Off"  class="nav-link dropdown-toggle">登出</a>
                         }
                         }
 
