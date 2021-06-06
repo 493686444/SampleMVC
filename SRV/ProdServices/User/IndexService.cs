@@ -15,12 +15,10 @@ namespace SRV.ProdServices.User
             UserRepository userRepository = new UserRepository();
             BLL.Entities.User user =userRepository.GetUserById(cookieId);
             bool result=user.PasswordTest(cookiePassword);
-            IndexModel model = new IndexModel();
-
-            //var config = new MapperConfiguration();
-
             if (result)
             {
+                IndexModel model = new IndexModel();
+                var config = new MapperConfiguration();
                 return model;
             }
             else

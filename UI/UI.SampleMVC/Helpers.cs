@@ -7,7 +7,8 @@ namespace UI.SampleMVC
 {
     public static class Helpers
     {
-        public static int? GetUserID()
+        public static int? GetUserId()
+
         {
             var userInfo = HttpContext.Current.Request.Cookies["User"].Values;  //这个地方耦合度高,可以放到UI层然后通过调用对象的方式降低耦合度
             if (userInfo == null)
@@ -15,10 +16,10 @@ namespace UI.SampleMVC
                 return null;
             }
 
-            int userInfoID = Convert.ToInt32(userInfo["ID"]);
+            int userInfoId = Convert.ToInt32(userInfo["Id"]);
             string userInfoPassword = (userInfo["Password"]).ToString();
 
-            int ID = SRV.ProdServices.Helpers.GetUserId(userInfoID, userInfoPassword);
+            int ID = SRV.ProdServices.Helpers.GetUserId(userInfoId, userInfoPassword);
             return ID;
 
         }

@@ -10,7 +10,7 @@ namespace SRV.ProdServices
 {
     public static class Helpers
     {
-        public static int GetUserID(int id,string userInfoPassword)
+        public static int GetUserId(int id,string userInfoPassword)
         {
             UserRepository userRepository = new UserRepository();
             BLL.Entities.User user =userRepository.GetUserById(id);
