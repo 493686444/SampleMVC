@@ -34,6 +34,7 @@ namespace SRV.ProdServices
                 cfg =>
                 {
                     cfg.CreateMap<BLL.Entities.User, SRV.ViewModels.User.IndexModel>();
+                    cfg.CreateMap<SRV.ViewModels.User.IndexModel, BLL.Entities.User>();
                 }//预连接
                  );
             mapper = config.CreateMapper();//创建映射器

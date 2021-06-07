@@ -57,21 +57,17 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="Helpers.cs" />
-    <Compile Include="Migrations\202106060957311_c.cs" />
-    <Compile Include="Migrations\202106060957311_c.designer.cs">
-      <DependentUpon>202106060957311_c.cs</DependentUpon>
+    <Compile Include="Migrations\202106070924311_create.cs" />
+    <Compile Include="Migrations\202106070924311_create.designer.cs">
+      <DependentUpon>202106070924311_create.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106061044417_cc.cs" />
-    <Compile Include="Migrations\202106061044417_cc.designer.cs">
-      <DependentUpon>202106061044417_cc.cs</DependentUpon>
+    <Compile Include="Migrations\202106070929189_cccc.cs" />
+    <Compile Include="Migrations\202106070929189_cccc.designer.cs">
+      <DependentUpon>202106070929189_cccc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106061047082_last.cs" />
-    <Compile Include="Migrations\202106061047082_last.designer.cs">
-      <DependentUpon>202106061047082_last.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106070109263_67d9h.cs" />
-    <Compile Include="Migrations\202106070109263_67d9h.designer.cs">
-      <DependentUpon>202106070109263_67d9h.cs</DependentUpon>
+    <Compile Include="Migrations\202106070932143_afff.cs" />
+    <Compile Include="Migrations\202106070932143_afff.designer.cs">
+      <DependentUpon>202106070932143_afff.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SqlDbContext.cs" />
@@ -89,17 +85,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106060957311_c.resx">
-      <DependentUpon>202106060957311_c.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106070924311_create.resx">
+      <DependentUpon>202106070924311_create.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106061044417_cc.resx">
-      <DependentUpon>202106061044417_cc.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106070929189_cccc.resx">
+      <DependentUpon>202106070929189_cccc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106061047082_last.resx">
-      <DependentUpon>202106061047082_last.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106070109263_67d9h.resx">
-      <DependentUpon>202106070109263_67d9h.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106070932143_afff.resx">
+      <DependentUpon>202106070932143_afff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

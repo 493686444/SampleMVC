@@ -15,18 +15,23 @@ namespace UI.SampleMVC.Controllers
         [NeedLogOn]
         public ActionResult Index()
         {
-            int Id=Convert.ToInt32(Request.Cookies["User"]["Id"]);
+            int Id = Convert.ToInt32(Request.Cookies["User"]["Id"]);
 
-            SRV.ViewModels.User.IndexModel model= service.Sevicing(Id);
+            SRV.ViewModels.User.IndexModel model = service.Sevicing(Id);
 
             return View(model);
-        }      
-        public ActionResult RetrievePassword()
-        {
-
-            return View();
         }
 
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(SRV.ViewModels.User.IndexModel model)
+        {
+            service.Sevicing(model);
+            return  View();
+        }
+        public ActionResult RetrievePassword()
+        {
+            return View();
+        }
     }
 }

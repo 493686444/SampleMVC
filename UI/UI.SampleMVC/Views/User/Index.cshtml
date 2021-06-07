@@ -18,7 +18,8 @@
     }
 }
 
-@using (Html.BeginForm(FormMethod.Get))
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <p>头像：（* 仅限jpg/png/gif）</p>
@@ -38,29 +39,26 @@
     <br />
     @Html.DropDownListFor(m => m.Year, new SelectList(years), "---")
     <span>年</span>
-
-    @Html.TextBoxFor(m => m.Email.Value)
-    if (Model.Email?.Activated == null)
+    if (Model.EmailId == 0)
     {
         <a href="">请设置邮箱</a>
     }
     else
     {
-        if (Model.Email.Activated)
-        {
-            <span>已激活</span>
-        }
-        else
+        @Html.TextBoxFor(m => m.Email.Value)
+        if (Model.Email.Activated == false)
         {
             <a href="">请激活</a>
         }
+        else
+        {
+            <span>已激活</span>
+        }
+
 
     }
     <input type="submit" value="保存" />
 }
-
-
-
 
 @section aside {
     <h3 style="color: #31708f;"><span class="fa fa-question-circle "></span>说明</h3>

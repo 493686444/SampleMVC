@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BLL.Repositories
 {
-    public class UserRepository:BaseRepository
+    public class UserRepository : BaseRepository
     {
-        public User GetUserById(int Id) 
+        public User GetUserById(int Id)
         {
-            User user=context.Set<User>().Find(Id);
+            User user = context.Set<User>().Find(Id);
             return user;
         }
         public User GetUserByName(string name)
@@ -26,6 +26,15 @@ namespace BLL.Repositories
             context.Set<User>().Add(user);
             context.SaveChanges();
             return user.Id;
+        }
+        public void ChangeUser(User user)
+        {
+            User newuser = new User() { Id = user.Id };
+            context.Set<User>().Attach(newuser);
+            newuser.Year = user.Year;
+            newuser.Gender = user.Gender;
+            newuser.Email = user.Email;
+            context.SaveChanges();
         }
     }
 }
