@@ -17,7 +17,7 @@ namespace BLL.Entities
         [Required(ErrorMessage = "请输入密码")]
         public string Password { get; set; }
         public bool? Gender { set; get; } 
-        public int? Yesr { set; get; }
+        public int? Year { set; get; }
         public Email Email { set; get; }
 
         

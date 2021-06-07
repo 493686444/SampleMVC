@@ -48,8 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article\ListModel.cs" />
-    <Compile Include="Article\PublishModel.cs" />
+    <Compile Include="Article\ListService.cs" />
+    <Compile Include="Article\PublishService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Log\OffService.cs" />

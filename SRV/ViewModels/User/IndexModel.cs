@@ -10,7 +10,7 @@ namespace SRV.ViewModels.User
    public class IndexModel
     {
         public bool? Gender { set; get; }
-        public int? Yesr { set; get; }
+        public int? Year { set; get; }
         public Email Email { set; get; }
 
     }

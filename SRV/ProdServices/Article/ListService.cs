@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SRV.ProdServices.Article
 {
-   public class ListModel
+   public class ListService
     {
     }
 }

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SRV.ViewModels.User;
 using AutoMapper;
+using SRV.ViewModels.User;
 
 namespace SRV.ProdServices.User
 {
@@ -20,15 +20,12 @@ namespace SRV.ProdServices.User
             if (result)
             {
                 IndexModel model = new IndexModel();
-                var config = new MapperConfiguration(
-                    cfg => cfg.CreateMap<BLL.Entities.User, SRV.ViewModels.User.IndexModel>()
-                    );
-                var mapper = config.CreateMapper();
+                Helpers.mapper.Map(user,model);//映射ing
                 return model;
             }
             else
             {
-                throw new Exception("存在cookie造假");
+                throw new Exception("可能存在cookie造假");
             }
         }
     }
