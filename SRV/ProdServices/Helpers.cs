@@ -16,7 +16,7 @@ namespace SRV.ProdServices
         {
             UserRepository userRepository = new UserRepository();
             BLL.Entities.User user = userRepository.GetUserById(id);
-            bool result = user.PasswordTest(userInfoPassword);
+            bool result = user.PasswordTest(userInfoPassword);   //
             if (result)
             {
                 return id;

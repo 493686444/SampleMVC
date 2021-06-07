@@ -11,22 +11,14 @@ namespace SRV.ProdServices.User
 {
     public class IndexService
     {
-  
-        public SRV.ViewModels.User.IndexModel Sevicing(int cookieId, string cookiePassword)
+        UserRepository userRepository = new UserRepository();
+        public SRV.ViewModels.User.IndexModel Sevicing(int cookieId)
         {
-            UserRepository userRepository = new UserRepository();
-            BLL.Entities.User user =userRepository.GetUserById(cookieId);
-            bool result=user.PasswordTest(cookiePassword);
-            if (result)
-            {
-                IndexModel model = new IndexModel();
-                Helpers.mapper.Map(user,model);//映射ing
-                return model;
-            }
-            else
-            {
-                throw new Exception("可能存在cookie造假");
-            }
+            BLL.Entities.User user = userRepository.GetUserById(cookieId);
+
+            IndexModel model = new IndexModel();
+            Helpers.mapper.Map(user, model);//映射ing
+            return model;
         }
     }
 }

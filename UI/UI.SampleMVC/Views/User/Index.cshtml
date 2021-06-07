@@ -36,17 +36,25 @@
 
     <label>生日：</label>
     <br />
-    @Html.DropDownListFor(m => m.Yesr, new SelectList(years), "---")
+    @Html.DropDownListFor(m => m.Year, new SelectList(years), "---")
     <span>年</span>
 
-    @Html.TextBoxFor(m => m.Email)
-    if (Model.Email.Activated)
+    @Html.TextBoxFor(m => m.Email.Value)
+    if (Model.Email?.Activated == null)
     {
-        <span>已激活</span>
+        <a href="">请设置邮箱</a>
     }
     else
     {
-        <a href="">请激活</a>
+        if (Model.Email.Activated)
+        {
+            <span>已激活</span>
+        }
+        else
+        {
+            <a href="">请激活</a>
+        }
+
     }
     <input type="submit" value="保存" />
 }

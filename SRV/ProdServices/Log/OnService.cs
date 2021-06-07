@@ -27,7 +27,7 @@ namespace SRV.ProdServices.Log
                 if (LogOnable)
                 {
                     result = "登录成功";
-                    return user.ID;
+                    return user.Id;
                    
                 }
                 else

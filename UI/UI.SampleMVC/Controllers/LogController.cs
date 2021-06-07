@@ -29,8 +29,8 @@ namespace UI.SampleMVC.Controllers
                 return View();
 
             HttpCookie cookie = new HttpCookie("User");
+            cookie.Values.Add("Id", userId.ToString());
             cookie.Values.Add("Name", model.Name);
-            cookie.Values.Add("UserId", userId.ToString());
             cookie.Values.Add("Password", model.Password.MD5Encrypt());
             if (model.RememberMe)
             {
