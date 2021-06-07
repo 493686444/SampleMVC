@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BLL.Repositories;
-using SRV.ViewModels.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +30,11 @@ namespace SRV.ProdServices
         static Helpers()  //静态构造函数 不加public
         {
             config = new MapperConfiguration
-                (  
-                cfg => cfg.CreateMap<BLL.Entities.User, IndexModel>()//预连接
+                (
+                cfg =>
+                {
+                    cfg.CreateMap<BLL.Entities.User, SRV.ViewModels.User.IndexModel>();
+                }//预连接
                  );
             mapper = config.CreateMapper();//创建映射器
         }

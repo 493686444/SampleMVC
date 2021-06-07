@@ -25,7 +25,7 @@ namespace SRV.ProdServices
                 {
                     BLL.Entities.User newuser = new BLL.Entities.User();
                     newuser.Name = model.Name;
-                    newuser.Password = model.Password.MD5Encrypt();   //加密
+                    newuser.Password = model.Password.MD5Encrypt();   //因为涉及到加密,所以没办法AutoMapper
                     repository.SaveUser(newuser);
                     return "注册成功";
                 }
