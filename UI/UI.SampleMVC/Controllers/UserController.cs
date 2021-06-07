@@ -26,7 +26,8 @@ namespace UI.SampleMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(SRV.ViewModels.User.IndexModel model)
         {
-            service.Sevicing(model);
+            int Id = Convert.ToInt32(Request.Cookies["User"]["Id"]);
+            service.Sevicing(model,Id);
             return  View();
         }
         public ActionResult RetrievePassword()

@@ -11,8 +11,6 @@ namespace SRV.ViewModels.User
     {
         public bool? Gender { set; get; }
         public int? Year { set; get; }
-        public int EmailId { set; get; }
-        public Email Email { set; get; }
 
     }
 }

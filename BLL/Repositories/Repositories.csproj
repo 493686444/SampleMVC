@@ -69,6 +69,14 @@
     <Compile Include="Migrations\202106070932143_afff.designer.cs">
       <DependentUpon>202106070932143_afff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106071141186_change1940.cs" />
+    <Compile Include="Migrations\202106071141186_change1940.designer.cs">
+      <DependentUpon>202106071141186_change1940.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106071151378_1951.cs" />
+    <Compile Include="Migrations\202106071151378_1951.designer.cs">
+      <DependentUpon>202106071151378_1951.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SqlDbContext.cs" />
     <Compile Include="UserRepository.cs" />
@@ -93,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106070932143_afff.resx">
       <DependentUpon>202106070932143_afff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106071141186_change1940.resx">
+      <DependentUpon>202106071141186_change1940.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106071151378_1951.resx">
+      <DependentUpon>202106071151378_1951.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

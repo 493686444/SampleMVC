@@ -3,7 +3,6 @@
     Layout = "~/Views/Shared/_User.cshtml";
 }
 @section title {
-    <span class="fa fa-sign-in " aria-hidden="true"></span>
     个人资料
 }
 @section upTitle {
@@ -22,12 +21,14 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <p>头像：（* 仅限jpg/png/gif）</p>
+    <span>头像：（* 仅限jpg/png/gif）</span>
     <input type="file" accept="image/*" name="icon" />
+    <br />
+    <br />
 
     <label>性别：</label>
     <label>
-        @Html.RadioButtonFor(m => m.Gender, true)
+        @Html.RadioButtonFor(m => m.Gender, true, new { })
         男
     </label>
     <label>
@@ -35,28 +36,14 @@
         女
     </label>
 
-    <label>生日：</label>
     <br />
+    <br />
+    <label>生日：</label>
     @Html.DropDownListFor(m => m.Year, new SelectList(years), "---")
     <span>年</span>
-    if (Model.EmailId == 0)
-    {
-        <a href="">请设置邮箱</a>
-    }
-    else
-    {
-        @Html.TextBoxFor(m => m.Email.Value)
-        if (Model.Email.Activated == false)
-        {
-            <a href="">请激活</a>
-        }
-        else
-        {
-            <span>已激活</span>
-        }
 
-
-    }
+    <br />
+    <br />
     <input type="submit" value="保存" />
 }
 

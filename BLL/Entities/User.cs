@@ -18,7 +18,7 @@ namespace BLL.Entities
         public string Password { get; set; }
         public bool? Gender { set; get; } 
         public int? Year { set; get; }
-        public int EmailId { set; get; } = 0;
+        public int? EmailId { set; get; }
         public Email Email { set; get; }
 
         

@@ -27,13 +27,8 @@ namespace BLL.Repositories
             context.SaveChanges();
             return user.Id;
         }
-        public void ChangeUser(User user)
+        public void UserSaveChanges(User user)
         {
-            User newuser = new User() { Id = user.Id };
-            context.Set<User>().Attach(newuser);
-            newuser.Year = user.Year;
-            newuser.Gender = user.Gender;
-            newuser.Email = user.Email;
             context.SaveChanges();
         }
     }

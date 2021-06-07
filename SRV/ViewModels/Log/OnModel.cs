@@ -14,7 +14,7 @@ namespace SRV.ViewModels.Log
         public string Name { set; get; }
         [Required(ErrorMessage = "密码不可为空")]
         public string Password { set; get; }
-        //public string Captcha { set; get; }
+        public string Captcha { set; get; }
 
         public bool RememberMe { set; get; }
 

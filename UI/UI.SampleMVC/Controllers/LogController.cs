@@ -21,6 +21,12 @@ namespace UI.SampleMVC.Controllers
         [HttpPost]
         public ActionResult On(OnModel model)
         {
+            string Captcha = Session["Captcha"].ToString();
+            if (model.Captcha != Captcha)
+            {
+                ViewData["result"] = "验证码错误";
+                return View();
+            }
             OnService onService = new OnService();
             int? userId = onService.Servicing(model, out string result);
             ViewData["result"] = result;

@@ -24,9 +24,11 @@
     @Html.PasswordFor(m => m.Password, new { placeholder = "不少于4个字符", @class = "form-control" })
 
     <label>验证码：（* 必填）</label>
+    <img src="/Shared/_GetCaptcha" alt="???" />
     <br />
-    @ViewData["captcha"]
-    <input asp-for="Captcha" style="width:80px; height:34px;margin-bottom:10px" class="form-control" />
+    @Html.TextBoxFor(m => m.Captcha , new { style = "width:80px; height:34px;margin-bottom:10px", @class="form-control" })
+ 
+
 
     <div>@ViewData["result"]</div>
     //用作测试将来会删除掉
@@ -37,8 +39,8 @@
             @Html.CheckBoxFor(m => m.RememberMe)记住我
         </label>
         <span class="pull-right btn">
-            <a href="">(｡ŏ_ŏ) 忘了</a>
-            <a asp-page="/" style="margin-left:10px;">
+            <a href="">忘记密码</a>
+            <a href="/Register" style="margin-left:10px;">
                 <span class="fa fa-registered"></span>
                 注册
             </a>

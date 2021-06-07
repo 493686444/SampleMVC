@@ -20,13 +20,11 @@ namespace SRV.ProdServices.User
             Helpers.mapper.Map(user, model);//映射ing
             return model;
         }
-        public void Sevicing(IndexModel model)
+        public void Sevicing(IndexModel model,int Id)
         {
-            BLL.Entities.User user = new BLL.Entities.User();
+            BLL.Entities.User user=userRepository.GetUserById(Id);
             Helpers.mapper.Map(model, user);
-            user.Email.Value = model.EmailValue;
-            user.Email.Activated = model.EmailActivated;
-            userRepository.ChangeUser(user);
+            userRepository.UserSaveChanges(user);
         }
     }
 }
