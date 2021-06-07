@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace UI.SampleMVC.Filters
 {
-    public class ModelErrorTransferFilter : ActionFilterAttribute
+    public class ModelErrorTransferFilter : ActionFilterAttribute //继承 XAttribute和IActionFilters的区别  后者适用所有,前者适用于声明Attibute的action
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
