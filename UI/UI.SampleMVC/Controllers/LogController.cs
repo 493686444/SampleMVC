@@ -45,7 +45,7 @@ namespace UI.SampleMVC.Controllers
         public ActionResult Off()
         {
             Response.Cookies["User"].Expires = DateTime.Now.AddDays(-1);
-            return RedirectToAction("On", "Log");
+            return RedirectToAction("On", "Log"); //这里用的是URL
         }
         [HttpPost]
         public ActionResult Off(OnModel model)
