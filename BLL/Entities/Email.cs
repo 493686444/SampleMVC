@@ -9,7 +9,7 @@ namespace BLL.Entities
     public class Email
     {
         public int Id { get; set; }
-        public int Value { get; set; }
+        public string Value { get; set; }
         public bool Activated { get; set; } = false;
 
     }

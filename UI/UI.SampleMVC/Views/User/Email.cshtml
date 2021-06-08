@@ -4,37 +4,32 @@
 }
 @section title{
     <span class="fa fa-envelope-o"></span>
-    激活Email
+    设置Email
 }
 @section upTitle {
-    激活Email
+    设置Email
 }
 
-<form action="" method="post">
 
-    <div class="form-group">
-        <label>Email：（* 必填）</label>
-        <div class="input-group">
-            <input type="text"  id="Address" name="Address" placeholder="能正常接收系统邮件的Email地址" class="form-control valid">
-            <a href="" class="input-group-addon">发送 </a>
-        </div>
+@using (Html.BeginForm())
+{
+<div>
+    <label>Email：（* 必填）</label>
+    @ViewData["result"]
+    <div class="input-group">
+        @Html.TextBoxFor(m => m.Value, new { placeholder = "能正常接收系统邮件的Email地址", @class = "form-control valid" })
+        <a class="input-group-addon">发送 </a>
     </div>
+</div>
 
-    <div class="form-group">
+    <div>
         <label>验证码：（* 必填）</label>
-        <input type="text" id="AuthCode" name="AuthCode" placeholder="从验证邮件中获取" class="form-control">
-        <span class="field-validation-valid"></span>
+        @Html.TextBoxFor(m => m.AuthCode, new { placeholder = "从验证邮件中获取", @class = "form-control" })
     </div>
 
-    <div class="submit">
-        <input type="submit" value="提交" class="btn btn-primary">
-
-        @*<span style="padding-left: 20px;" class="text-info">
-            <span class="fa fa-info-circle"></span> 成功激活后自动返回<a href="">之前页面</a>
-        </span>*@
-    </div>
-</form>
-
+    <br />
+    <input type="submit" value="提交" class="btn btn-primary">
+}
 
 @section aside {
     <h3 style="color: #31708f;"><span class="fa fa-question-circle "></span>说明</h3>

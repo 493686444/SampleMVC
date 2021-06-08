@@ -12,9 +12,9 @@ namespace SRV.ProdServices.User
     public class IndexService
     {
         UserRepository userRepository = new UserRepository();
-        public SRV.ViewModels.User.IndexModel Sevicing(int cookieId)
+        public IndexModel Sevicing(int Id)
         {
-            BLL.Entities.User user = userRepository.GetUserById(cookieId);
+            BLL.Entities.User user = userRepository.GetUserById(Id);
 
             IndexModel model = new IndexModel();
             Helpers.mapper.Map(user, model);//映射ing
@@ -25,6 +25,15 @@ namespace SRV.ProdServices.User
             BLL.Entities.User user=userRepository.GetUserById(Id);
             Helpers.mapper.Map(model, user);
             userRepository.UserSaveChanges(user);
+        }
+        public EmailModel EmailSevicing( int Id) 
+        {
+            EmailRepository emailRepository = new EmailRepository();
+            BLL.Entities.Email email = emailRepository.GetEmailByUserId(Id);
+            EmailModel emailModel = new EmailModel();
+            Helpers.mapper.Map(email,emailModel);
+
+            return emailModel;
         }
     }
 }

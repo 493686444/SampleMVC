@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="EmailRepository.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Migrations\202106070924311_create.cs" />
     <Compile Include="Migrations\202106070924311_create.designer.cs">
@@ -84,6 +85,10 @@
     <Compile Include="Migrations\202106080221198_1021.cs" />
     <Compile Include="Migrations\202106080221198_1021.designer.cs">
       <DependentUpon>202106080221198_1021.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106080750328_1550.cs" />
+    <Compile Include="Migrations\202106080750328_1550.designer.cs">
+      <DependentUpon>202106080750328_1550.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SqlDbContext.cs" />
@@ -121,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106080221198_1021.resx">
       <DependentUpon>202106080221198_1021.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106080750328_1550.resx">
+      <DependentUpon>202106080750328_1550.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

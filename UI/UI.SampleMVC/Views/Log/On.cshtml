@@ -23,11 +23,12 @@
     @Html.ValidationMessageFor(m => m.Password)
     @Html.PasswordFor(m => m.Password, new { placeholder = "不少于4个字符", @class = "form-control" })
 
+
     <label>验证码：（* 必填）</label>
     <img src="/Shared/_GetCaptcha" alt="???" />
     <br />
-    @Html.TextBoxFor(m => m.Captcha , new { style = "width:80px; height:34px;margin-bottom:10px", @class="form-control" })
- 
+    @Html.TextBoxFor(m => m.Captcha, new { style = "width:80px; height:34px;margin-bottom:10px", @class = "form-control" })
+
 
 
     <div>@ViewData["result"]</div>

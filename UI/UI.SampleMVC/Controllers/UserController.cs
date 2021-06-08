@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using UI.SampleMVC.Filters;
+using SRV.ViewModels.User;
 
 namespace UI.SampleMVC.Controllers
 {
@@ -24,9 +25,9 @@ namespace UI.SampleMVC.Controllers
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Index(SRV.ViewModels.User.IndexModel model)
+        public ActionResult Index(IndexModel model)
         {
-            
+
             if (model.icon != null)
             {
                 //起名
@@ -45,14 +46,29 @@ namespace UI.SampleMVC.Controllers
             service.Sevicing(model, Id);
             return RedirectToAction("Index", "User");
         }
-      
-        
+
+
         public ActionResult RetrievePassword()
         {
             return View();
         }
 
-        public ActionResult Email() 
+        public ActionResult Email()
+        {
+            int userId = Convert.ToInt32(Request.Cookies["User"]["Id"]);
+            EmailModel emailModel = service.EmailSevicing(userId);
+            if (emailModel.Activated)
+            {
+                ViewData["result"] = "{ 已激活 }";
+            }
+            else
+            {
+                ViewData["result"] = "{ 未激活 }";
+            }
+            return View(emailModel);
+        }
+        [HttpPost]
+        public ActionResult Email(EmailModel model)
         {
             return View();
         }
