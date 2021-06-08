@@ -18,17 +18,20 @@
 }
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Index", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <span>头像：（* 仅限jpg/png/gif）</span>
-    <input type="file" accept="image/*" name="icon" />
+
+    <img src="@Model.IconPath" />
+    @Html.TextBoxFor(m => m.IconPath, new { type="hidden" })
+    <input type="file" name="icon" multiple accept="image/*" />
     <br />
     <br />
 
     <label>性别：</label>
     <label>
-        @Html.RadioButtonFor(m => m.Gender, true, new { })
+        @Html.RadioButtonFor(m => m.Gender, true)
         男
     </label>
     <label>

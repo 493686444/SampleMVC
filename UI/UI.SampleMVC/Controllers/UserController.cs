@@ -1,6 +1,7 @@
 ﻿using SRV.ProdServices.User;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,14 +22,28 @@ namespace UI.SampleMVC.Controllers
 
             return View(model);
         }
-
-        [HttpPost]
         [ValidateAntiForgeryToken]
+        [HttpPost]
         public ActionResult Index(SRV.ViewModels.User.IndexModel model)
         {
+            
+            if (model.icon != null)
+            {
+                //起名
+                DateTime dateTime = DateTime.Now;
+                string folderPath = $@"/Image/{dateTime.Year}/{dateTime.Month}";
+                string fileName = $"{Guid.NewGuid()}{Path.GetExtension(model.icon.FileName)}";
+                string filePath = $@"{folderPath}/{fileName}";
+                //存文件
+                Directory.CreateDirectory(Server.MapPath(folderPath));
+                model.icon.SaveAs(Server.MapPath(filePath));
+                //修改model
+                model.IconPath = filePath;
+            }/*else nothing*/
+
             int Id = Convert.ToInt32(Request.Cookies["User"]["Id"]);
-            service.Sevicing(model,Id);
-            return  View();
+            service.Sevicing(model, Id);
+            return RedirectToAction("Index", "User");
         }
         public ActionResult RetrievePassword()
         {

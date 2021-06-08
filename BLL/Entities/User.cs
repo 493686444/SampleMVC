@@ -20,8 +20,7 @@ namespace BLL.Entities
         public int? Year { set; get; }
         public int? EmailId { set; get; }
         public Email Email { set; get; }
-
-        
+        public string IconPath { get; set; }
         public bool PasswordTest(string password)
         {
             if (password == Password)

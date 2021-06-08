@@ -77,6 +77,14 @@
     <Compile Include="Migrations\202106071151378_1951.designer.cs">
       <DependentUpon>202106071151378_1951.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106080134408_934.cs" />
+    <Compile Include="Migrations\202106080134408_934.designer.cs">
+      <DependentUpon>202106080134408_934.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106080221198_1021.cs" />
+    <Compile Include="Migrations\202106080221198_1021.designer.cs">
+      <DependentUpon>202106080221198_1021.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SqlDbContext.cs" />
     <Compile Include="UserRepository.cs" />
@@ -107,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106071151378_1951.resx">
       <DependentUpon>202106071151378_1951.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106080134408_934.resx">
+      <DependentUpon>202106080134408_934.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106080221198_1021.resx">
+      <DependentUpon>202106080221198_1021.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
