@@ -50,6 +50,7 @@
     <Compile Include="RegisterModel.cs" />
     <Compile Include="Supervision\PublishModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\EmailModel.cs" />
     <Compile Include="User\IndexModel.cs" />
     <Compile Include="User\RetrievePasswordModel.cs" />
   </ItemGroup>

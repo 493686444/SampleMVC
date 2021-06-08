@@ -209,6 +209,7 @@
     <Content Include="Views\Shared\_User.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\User\RetrievePassword.cshtml" />
+    <Content Include="Views\User\Email.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

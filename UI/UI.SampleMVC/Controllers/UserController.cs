@@ -45,7 +45,14 @@ namespace UI.SampleMVC.Controllers
             service.Sevicing(model, Id);
             return RedirectToAction("Index", "User");
         }
+      
+        
         public ActionResult RetrievePassword()
+        {
+            return View();
+        }
+
+        public ActionResult Email() 
         {
             return View();
         }
